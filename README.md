@@ -18,6 +18,9 @@ Commandes:
  * ```exec commande```: permet d'exécuter une commande dans un conteneur démarré
  * ```docker inspect containerId```: permet d'inspecter le conteneur _containerId_
  * ```docker logs containerId```: permet d'obtenir les fichiers de log
+ * ```docker run -tid --name variableenvironnement --env MAVARIABLE="variable" ubuntu:latest```: permet de transmettre une variable d'environnement
+ * ```docker run -tid --name fichiervariableenvironnement --env-file mesvariables.lst ubuntu:latest```: permet de transmettre un fichier de variables d'environnement
+ * ```docker exec -ti variableenvironnement sh```: récupération de la variable d'environnement
  * ```docker volume```: permet de réaliser des opérations sur les volumes
    * ```create```
    * ```inspect```
@@ -35,6 +38,37 @@ Exemple pour démarrer une image Ubuntu avec Java:
 ```apt-get install java```: Installation Java  
 ```apt-get install vim```: Installation de VIM
 
-Pour faire du mapping de volume:
+Pour faire du mapping de volume:  
 ```docker run -dti -p 8080:80 -v /Users/user/doc/dockerexample/page/:/usr/share/nginx/html/ --name servernginx nginx```  
-```docker run -tid --name webvolume -p 9698 --mount source=monvolume,target=/usr/share/nginx/html/ nginx```
+```docker run -tid --name webvolume -p 9698 --mount source=monvolume,target=/usr/share/nginx/html/ nginx```  
+```docker run -it --privileged --pid=host debian nsenter -t 1 -m -u -n -i sh``` (accéder au volume)  
+```cd /var/lib/docker/volumes/ | ls``` (volumes)
+
+Définir sa propre image:  
+ * Faire son conteneur comme souhaité
+ * ```docker commit -m "création d'une image ubuntu modifiée" containerId imageName```  
+
+Définir un Dockerfile:  
+ * Créer un fichier _Dockerfile_
+ * Structure:
+
+```java
+FROM openjdk
+COPY Application.class Application.class
+CMD ["java", "Application"]
+```
+
+```python
+FROM ubuntu
+COPY test.py test.py
+RUN apt-get update
+RUN apt-get install python -y
+CMD ["python", "test.py"]
+```
+
+Envoyer une image sur DockerHub:
+ * Créer une image
+ * Créer un dépôt dockerHub
+ * Se connecter à docker ```docker login```
+ * Créer un lien entre l'image et le dépôt ```docker tag image depot```
+ * Envoyer l'image sur dockerHub ```docker push depot```
