@@ -18,7 +18,12 @@ Commandes:
  * ```exec commande```: permet d'exécuter une commande dans un conteneur démarré
  * ```docker inspect containerId```: permet d'inspecter le conteneur _containerId_
  * ```docker logs containerId```: permet d'obtenir les fichiers de log
- * ```docker volume```: permet de réaliser des opérations sur les volumes 
+ * ```docker volume```: permet de réaliser des opérations sur les volumes
+   * ```create```
+   * ```inspect```
+   * ```ls```
+   * ```prune```
+   * ```rm```
 
 Exemple pour démarrer une image MySQL:
 ```docker run --name mysql -e MYSQL_ROOT_PASSWORD=root -d mysql```: Nom de l'image: _mysql_, mot de passe root: _root_  
@@ -30,5 +35,6 @@ Exemple pour démarrer une image Ubuntu avec Java:
 ```apt-get install java```: Installation Java  
 ```apt-get install vim```: Installation de VIM
 
-Pour faire du mapping:
-```docker run -dti -p 8080:80 -v /Users/user/doc/dockerexample/page/:/usr/share/nginx/html/ --name servernginx nginx```
+Pour faire du mapping de volume:
+```docker run -dti -p 8080:80 -v /Users/user/doc/dockerexample/page/:/usr/share/nginx/html/ --name servernginx nginx```  
+```docker run -tid --name webvolume -p 9698 --mount source=monvolume,target=/usr/share/nginx/html/ nginx```
