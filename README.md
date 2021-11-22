@@ -12,6 +12,7 @@ Commandes:
  * ```docker run -d -p 9999:80 nginx```: permet de démarrer une instance de Nginx sur port 9999 sur la machine hôte, et sur le port 80 sur le conteneur
  * ```docker run --name customName -d -p 8989:880 nginx```: permet de mettre un nom spécifique _nomCustom_
  * ```docker stop containerId```: permet de stopper un conteneur en cours d'exécution
+ * ```docker start containerId```: permet de redémarrer un conteneur
  * ```docker rm containerId```: permet de supprimer un conteneur (ne doit pas être en cours d'exécution)
  * ```docker rmi -f image_name```: permet de supprimer une ou plusieurs image(s) de force
  * ```exec commande```: permet d'exécuter une commande dans un conteneur démarré
@@ -28,3 +29,6 @@ Exemple pour démarrer une image Ubuntu avec Java:
 ```apt-get update```: Mise à jour APT  
 ```apt-get install java```: Installation Java  
 ```apt-get install vim```: Installation de VIM
+
+Pour faire du mapping:
+```docker run -dti -p 8080:80 -v /Users/user/doc/dockerexample/page/:/usr/share/nginx/html/ --name servernginx nginx```
