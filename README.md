@@ -10,4 +10,7 @@ Commandes:
  * ```docker ps```: permet de lister tous les conteneurs qui sont en cours d'exécution. Chaque conteneur dispose d'un identifiant unique
  * ```docker ps -a```: permet de lister tous les conteneurs avec leurs status
  * ```docker run -d -p 9999:80 nginx```: permet de démarrer une instance de Nginx sur port 9999 sur la machine hôte, et sur le port 80 sur le conteneur
- * ```docker run --name nomCustom -d -p 8989:880 nginx```: permet de mettre un nom spécifique _nomCustom_
+ * ```docker run --name customName -d -p 8989:880 nginx```: permet de mettre un nom spécifique _nomCustom_
+ * ```docker stop containerId```: permet de stopper un conteneur en cours d'exécution
+ * ```docker rm containerId```: permet de supprimer un conteneur (ne doit pas être en cours d'exécution)
+ * ```docker rmi -f image_name```: permet de supprimer une ou plusieurs image(s) de force
