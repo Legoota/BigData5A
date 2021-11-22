@@ -14,3 +14,8 @@ Commandes:
  * ```docker stop containerId```: permet de stopper un conteneur en cours d'exécution
  * ```docker rm containerId```: permet de supprimer un conteneur (ne doit pas être en cours d'exécution)
  * ```docker rmi -f image_name```: permet de supprimer une ou plusieurs image(s) de force
+ * ```exec commande```: permet d'exécuter une commande dans un conteneur démarré
+
+Exemple pour démarrer une image MySQL:
+```docker run --name mysql -e MYSQL_ROOT_PASSWORD=root -d mysql```: Nom de l'image: _mysql_, mot de passe root: _root_  
+```docker exec -ti mysql mysql --password```
