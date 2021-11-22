@@ -19,3 +19,9 @@ Commandes:
 Exemple pour démarrer une image MySQL:
 ```docker run --name mysql -e MYSQL_ROOT_PASSWORD=root -d mysql```: Nom de l'image: _mysql_, mot de passe root: _root_  
 ```docker exec -ti mysql mysql --password```
+
+Exemple pour démarrer une image Ubuntu avec Java:
+```docker run -it ubuntu bash```: Obtention image ubuntu  
+```apt-get update```: Mise à jour APT  
+```apt-get install java```: Installation Java  
+```apt-get install vim```: Installation de VIM
