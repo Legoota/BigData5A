@@ -1,4 +1,4 @@
-package com.example.bigdata;
+package com.example.bigdata.bigdata;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -47,7 +47,7 @@ public class Produit {
 
     @Override
     public String toString() {
-        return "com.example.bigdata.Produit{" +
+        return "com.example.bigdata.bigdata.Produit{" +
                 "identifiant=" + identifiant +
                 ", designation='" + designation + '\'' +
                 ", prix=" + prix +
