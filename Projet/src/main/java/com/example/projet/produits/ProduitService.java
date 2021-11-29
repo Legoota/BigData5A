@@ -20,7 +20,7 @@ public class ProduitService {
         return _ps.findByDescription(description);
     }
 
-    @GetMapping("/{desingation}/{prix}")
+    @GetMapping("/{description}/{prix}")
     public Produit add(@PathVariable String description, @PathVariable double prix)
     {
         if(!description.isEmpty())
