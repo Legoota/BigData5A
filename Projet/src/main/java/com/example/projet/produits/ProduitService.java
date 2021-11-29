@@ -17,7 +17,7 @@ public class ProduitService {
     @GetMapping("/{description}")
     public Produit getById(@PathVariable String description )
     {
-        return _ps.getByDescription(description);
+        return _ps.findByDescription(description);
     }
 
     @GetMapping("/{desingation}/{prix}")
