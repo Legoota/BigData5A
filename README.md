@@ -1,7 +1,7 @@
 # BigData5A
 ### Big Data course at Polytech Nancy
 
-Lien de l'image Docker de l'exercice: https://hub.docker.com/r/leokr/syoucef-mongodbservice
+Lien de l'image Docker de l'exercice: https://hub.docker.com/r/leokr/syoucef-mongodbservice, voir explications [partie exercice](#sujet)
 
 ## Cours 1
 Image: Element générique  
