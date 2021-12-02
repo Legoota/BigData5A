@@ -253,11 +253,11 @@ Ensuite, nous pouvons construire l'image de notre service grâce au *Dockerfile*
 
 Notre service est à présent disponible à l'adresse http://localhost:8181/produit.  
 Voici les différentes possibilités:
- * ```GET``` http://localhost/produit : liste l'ensemble des produits de la collection
- * ```GET``` http://localhost/produit/description : renvoit l'objet correspondant à la *description*
- * ```GET``` http://localhost/produit/count : renvoit le nombre total d'objets de la collection
- * ```POST``` http://localhost/produit/{description}/{prix} : ajoute un nouveau produit ayant une description *description* et un prix *prix* dans la base de données
- * ```DELETE``` http://localhost/produit/ (avec un ```produit``` en body au format *JSON*) : permet de supprimer un produit de la base de données
+ * ```GET``` http://localhost:8181/produit : liste l'ensemble des produits de la collection
+ * ```GET``` http://localhost:8181/produit/description : renvoit l'objet correspondant à la *description*
+ * ```GET``` http://localhost:8181/produit/count : renvoit le nombre total d'objets de la collection
+ * ```POST``` http://localhost:8181/produit/{description}/{prix} : ajoute un nouveau produit ayant une description *description* et un prix *prix* dans la base de données
+ * ```DELETE``` http://localhost:8181/produit/ (avec un ```produit``` en body au format *JSON*) : permet de supprimer un produit de la base de données
 
 ##### Upload de l'image sur *Docker Hub*
 
